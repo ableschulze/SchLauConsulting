@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de" ng-app="KOM">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="UTF-8">
+        <link href="/static/dest/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/controls.css">
+
+        <script src="/static/js/ie8-hacks.js" type="text/javascript"></script>
+        <script src="/static/js/moment.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+        <script type="text/javascript" src="/static/dest/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/static/js/app.js"></script>
+        <script type="text/javascript" src="/static/js/Anwesenheitskontrolle.js"></script>
+        <script type="text/javascript" src="/static/js/MesseUndFoerderpreise.js"></script>
+        <script type="text/javascript" src="/static/js/navigation.js"></script>
+        <title>SchLau Consulting & Solution</title>
+</head>
+    <body ng-controller="ngKOMApps">
+        <header role="banner">
+            <nav class="navbar navbar-inverse navbar-static-top" style="margin:0px">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navSiteMenu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse navSiteMenu">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Leistung</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="#">&Uumlber uns</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main role="main" id="mainFrame">
+            <div class="jumbotron jumbotronmain">
+                <div class="container header">
+                    <p class="htextfront">
+                        <span class="htext">
+                            Zielorientiert und Kompetent
+                        </span>
+                    </p>
+                    <p  class="htextsub">
+                        <span class="htext htextsub">
+                            Eben einfach <span class="htextbuzz">SchLau</span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-6 specboxhead">
+                        <div class="specbox">
+                            <span class="spechead">leistungen</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="specbox">
+                            <ul>
+                                <li class="speclist speclistbullet1"><span class="speclisttext">Individualsoftware im Online- und Offlinebereich</span></li>
+                                <li class="speclist speclistbullet1"><span class="speclisttext">Programmierung in C# .NET, VB .NET, Python</span></li>
+                                <li class="speclist speclistbullet2"><span class="speclisttext">Datenbankentwicklung</span></li>
+                                <li class="speclist speclistbullet2"><span class="speclisttext">Erstellung von Pflichten- und Lastenheften</span></li>
+                                <li class="speclist speclistbullet3"><span class="speclisttext">Analyse und Erstellung von Reportings</span></li>
+                                <li class="speclist speclistbullet3"><span class="speclisttext">Datawarehousing und BI</span></li>
+                                <li class="speclist speclistbullet4"><span class="speclisttext">Analyse, Konzeption, Implementierung und Testing</span></li>
+                                <li class="speclist speclistbullet4"><span class="speclisttext">ERP- und CRM-Systeme</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+               <hr>
+            </div>
+            <div class="jumbotron contactboxframe">
+                <div class="col-lg-offset-2 col-lg-7" style="text-align:right">
+                    <div class="contactbox" style="text-align:left">
+                        <p style="color:white; font-size:3em;">
+                            sofort KONTAKT
+                        </p>
+                        <p style="color:white; text-align:left; font-size:0.9em;">Schreiben Sie uns unverbindlich, rufen Sie uns an (+49 2261 XXXXXX) oder nutzen Sie das Kontakt-Formular. Wir stehen Ihnen f&uumlr weitere Ausk&uumlnfte gerne zur Verf&uumlgung.</p>
+                    </div>
+                </div>
+                <div style="col-lg-3">
+                    <div class="contactbox" style="text-align:left;">
+                        <a class="btn btn-default" href="#" role="button">Termin vereinbaren</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,123 @@
+.navbar .navbar-nav{
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.jumbotronmain {
+    background: url("../img/training.jpg");
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+.htext
+{
+font-size:2.5em;
+color: white;
+font-weight:bold;
+text-shadow: black 0.1em 0.1em 0.1em;
+}
+
+.htextfront
+{
+  text-align:left;
+}
+
+.htextsub
+{
+  text-align:center;
+}
+
+.htextbuzz
+{
+  font-size:1.5em;
+}
+
+.header
+{
+    height:550px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.speclisttext {
+    text-decoration: none;
+    color:#666666;
+}
+
+.speclist
+{
+  font-size:1.2em;
+  padding-bottom:10px;
+}
+
+.speclistbullet1{
+    color:#344e73;
+}
+
+.speclistbullet2{
+    color:#009999;
+}
+
+.speclistbullet3{
+    color:#63e5e7;
+}
+
+.speclistbullet4{
+    color:#88f2e4;
+}
+
+.specbox
+{
+  height:300px;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.spechead
+{
+  font-weight:bold;
+  font-size:5em;
+  color:#344e73;
+}
+
+.specboxhead
+{
+  display: table;
+  text-align:center;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    color: #8c9c88; /* old IE */
+    background-color: #8c9c88; /* Modern Browsers */
+}
+
+.contactboxframe
+{
+background: rgb(19,49,73); /* Old browsers */
+background: -moz-linear-gradient(left,  rgb(19,49,73) 0%, rgb(38,88,142) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgb(19,49,73) 0%,rgb(38,88,142) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgb(19,49,73) 0%,rgb(38,88,142) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#133149', endColorstr='#26588e',GradientType=1 ); /* IE6-9 */
+
+}
+
+.contactboxframe
+{
+  height:180px;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.contactbox
+{
+  vertical-align: middle;
+  display: table-cell;
+}

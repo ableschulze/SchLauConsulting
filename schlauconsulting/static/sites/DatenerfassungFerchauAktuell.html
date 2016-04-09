@@ -1,0 +1,130 @@
+<div class="col-lg-12">
+    <div class="page-header">
+        <h1>Artikel</h1>
+    </div>
+    <div ng-show="ShowMessageBox()" class="alert" ng-class="{'alert-success': 0 == error, 'alert-danger': 1 == error}">
+        <span ng-class="{'glyphicon-ok': 0 == error, 'glyphicon-dange': 1 == error}" class="glyphicon"></span>
+        {{fehlerMessage}}
+    </div>
+    <div id="rowData" class="row">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label for="cboFirma">Firma</label>
+                <select class="form-control" id="cboFirma" ng-model="cboFirma" ng-change="FirmaSelectedChanged()" ng-options="Firma.firma for Firma in Firmen">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cboVertriebsgebiet">Vertriebsgebiet</label>
+                <select class="form-control" id="cboVertriebsgebiet" ng-model="cboVertriebsgebiet" ng-disabled="Vertriebsgebiete==undefined" ng-disabled="expression" ng-change="VertriebsgebietSelectedChanged()" ng-options="Vertriebsgebiet.vertriebsgebiet for Vertriebsgebiet in Vertriebsgebiete">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cboNiederlassung">Niederlassung</label>
+                <select class="form-control" id="cboNiederlassung" ng-model="cboNiederlassung" ng-disabled="Niederlassungen==undefined" ng-options="Niederlassung.kst_gruppe for Niederlassung in Niederlassungen">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cboJahr">Jahr</label>
+                <select class="form-control" id="cboJahr" ng-model="cboJahr" ng-options="Jahr.jahr for Jahr in Jahre">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cboMonat">Monat</label>
+                <select class="form-control" id="cboMonat" ng-model="cboMonat" ng-options="Monat.monatname for Monat in Monate">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cboKategorie">Kategorie</label>
+                <select class="form-control" id="cboKategorie" ng-model="cboKategorie" ng-options="Kategorie.kategorie for Kategorie in Kategorien">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="txtTitel">Titel</label>
+                <textarea  type="text" class="form-control Textarea" rows="1" id="txtTitel" ng-model="txtTitel"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="txtBemerkung">Bemerkung</label>
+                <textarea  type="text" class="form-control Textarea" rows="4" id="txtBemerkung" ng-model="txtBemerkung"></textarea>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class=" col-lg-offset-8 col-lg-4">
+                            <input type="text" id="txtFilter" ng-model="txtFilter" placeholder="Finden" ng-change="FilterTNChanged()" class="form-control filter_right" placeholder="Text input">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="btn-group Navigation" role="group">
+                                <button type="button" data-toggle="modal" data-target="#myModal" ng-click="ClickNewTeilnehmer()" class="btn btn-default">Neuer Teilnehmer</button>
+                                <button type="button" class="btn btn-default" ng-click="refreshData()">Aktualisieren <span class="glyphicon glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="btn-group Pager Navigation" role="group">
+                                <button type="button" class="btn btn-default" ng-click="TNNavClick(1)" ng-class="{'disabled': 1 == tn_actual}"><span class="glyphicon glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+                                <button type="button" class="btn btn-default" ng-click="TNNavClick(tn_actual - 1)" ng-class="{'disabled': 1 == tn_actual}"><span class="glyphicon glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+                                <button type="button" class="btn btn-default" ng-click="TNNavClick(i)" ng-class="{'active': i == tn_actual}" ng_repeat="i in GetRangeTeilnehmer()">{{i}}</button>
+                                <button type="button" class="btn btn-default" ng-click="TNNavClick(GetRangeTeilnehmer() + 1)" ng-show="TeilnehmerShowNavSpecial()">...<span class="sr-only"></span></button>
+                                <button type="button" class="btn btn-default" ng-click="TNNavClick(tn_split)" ng-show="TeilnehmerShowNavSpecial()">{{tn_split}} <span class="sr-only"></span></button>
+                                <button type="button" class="btn btn-default" ng-click="TNNavClick(tn_actual + 1)" ng-class="{'disabled': tn_actual == tn_split}"><span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+                                <button type="button" class="btn btn-default" ng-click="TNNavClick(tn_split)" ng-class="{'disabled': tn_actual == tn_split}"><span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-hover table-condensed table-striped table-bordered">
+                        <thead>
+                            <th>
+                                <a href="#" class="btn btn-primary disabled btn-block btn-xs" role="button">
+                                    <span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                </a>
+                            </th>
+                            <th ng-repeat="column in artikelcols">
+                                <a href="#" ng-click="SortFunctionByKey(column.name)" class="btn btn-primary btn-block btn-xs" role="button">
+                                    {{column.name}}
+                                </a>
+                            </th>
+                        </thead>
+                        <tr ng-repeat="a in artikel | limitTo:pager:((actual - 1) * pager) | filter:txtFilter">
+                            <td>
+                                <a href="#" ng-click="ArtikelSelect(a)" class="btn btn-primary btn-block btn-xs" role="button">
+                                    <span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                </a>
+                            </td>
+                            <td>{{a.tbl_ArtikelFEAktuell_IDN}}</td>
+                            <td>{{a.tbl_ArtikelFEAktuell_Kategorie_IDN}}</td>
+                            <td>{{a.Firmennummer}}</td>
+                            <td>{{a.Vertriebsgebiet}}</td>
+                            <td>{{a.KST}}</td>
+                            <td>{{a.Jahr}}</td>
+                            <td>{{a.MonatNr}}</td>
+                            <td>{{a.Titel}}</td>
+                            <td>{{a.Bemerkung}}</td>
+                        </tr>
+                    </table>
+                 </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7">
+                </div>
+                 <div class="col-lg-5">
+                    <nav id="pager" class="Pager">
+                        <ul class="pagination">
+                            <li ng-class="{'disabled': 1 == actual}" ><a href="#"  ng-click="ArtikelNavClick(actual - 1)" aria-label="Previous"><span aria-hidden="true"><span class="glyphicon glyphicon glyphicon-chevron-left" aria-hidden="true"></span></span></a></li>
+                            <li ng-click="ArtikelNavClick(i)" ng-class="{'active': i == actual}" ng_repeat="i in GetRange()"><a href="#" >{{i}}<span class="sr-only">(current)</span></a></li>
+                            <li ng-show="ShowNavSpecial()"><a href="#" ng-click="ArtikelNavClick(GetRange() + 1)">...<span class="sr-only"></span></a></li>
+                            <li ng-show="ShowNavSpecial()"><a href="#" ng-click="ArtikelNavClick(split)">{{split}} <span class="sr-only"></span></a></li>
+                            <li ng-class="{'disabled': actual == split}"><a href="#" ng-click="ArtikelNavClick(actual + 1)" aria-label="Forward"><span aria-hidden="true"><span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span></span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
