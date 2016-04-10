@@ -88,7 +88,7 @@
                         <p style="color:white; text-align:left; font-size:0.9em;">Schreiben Sie uns unverbindlich, rufen Sie uns an (+49 2261 XXXXXX) oder nutzen Sie das Kontakt-Formular. Wir stehen Ihnen f&uumlr weitere Ausk&uumlnfte gerne zur Verf&uumlgung.</p>
                     </div>
                 </div>
-                <div style="col-lg-3">
+                <div class="col-lg-3">
                     <div class="contactbox" style="text-align:left;">
                         <a class="btn btn-default" href="#" role="button">Termin vereinbaren</a>
                     </div>
