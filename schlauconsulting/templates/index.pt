@@ -76,21 +76,20 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-               <hr>
-            </div>
-            <div class="jumbotron contactboxframe">
-                <div class="col-lg-offset-2 col-lg-7" style="text-align:right">
-                    <div class="contactbox" style="text-align:left">
+            <div class="row contactboxcolor">
+                <div class="col-sm-1 col-md-1 col-lg-2">
+                </div>
+                <div class="col-sm-7 col-md-7 col-lg-7" style="text-align:right">
+                    <div class="contactboxframe" style="text-align:left">
                         <p style="color:white; font-size:3em;">
                             sofort KONTAKT
                         </p>
                         <p style="color:white; text-align:left; font-size:0.9em;">Schreiben Sie uns unverbindlich, rufen Sie uns an (+49 2261 XXXXXX) oder nutzen Sie das Kontakt-Formular. Wir stehen Ihnen f&uumlr weitere Ausk&uumlnfte gerne zur Verf&uumlgung.</p>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="contactbox" style="text-align:left;">
-                        <a class="btn btn-default" href="#" role="button">Termin vereinbaren</a>
+                <div class="col-sm-4 col-md-4 col-lg-3">
+                    <div class="contactboxframe">
+                        <a class="btn btn-block btn-noncolor" href="#" role="button">JETZT TERMIN VEREINBAREN</a>
                     </div>
                 </div>
             </div>
